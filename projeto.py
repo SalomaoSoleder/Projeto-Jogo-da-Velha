@@ -55,6 +55,10 @@ def vencedorFuncao(posicoes) :
     return True
   return False
 
+def velhaFuncao(lista_de_posicoes) :
+  existe = " " in lista_de_posicoes
+  return existe
+
 if __name__ == '__main__':
   posicoes = ["@"," "," "," "," "," "," "," "," "," "]
   player_1 = escolherFuncao()
@@ -82,6 +86,10 @@ if __name__ == '__main__':
 
       posicoes[posicao_do_usuario] = player_2
       tabuleiroFuncao(posicoes)
+      velha = velhaFuncao(posicoes)
+      if (velha==False) :
+        print("VELHA!")
+        break
       vencedor = vencedorFuncao(posicoes)
 
       if (vencedor==True) :
@@ -96,6 +104,10 @@ if __name__ == '__main__':
 
       posicoes[posicao_do_usuario] = player_1
       tabuleiroFuncao(posicoes)
+      velha = velhaFuncao(posicoes)
+      if (velha==False) :
+        print("VELHA!")
+        break
       vencedor = vencedorFuncao(posicoes)
       if (vencedor==True) :
         print("Voce ganhou player 1 ")
@@ -117,6 +129,10 @@ if __name__ == '__main__':
 
       posicoes[posicao_do_usuario] = player_1
       tabuleiroFuncao(posicoes)
+      velha = velhaFuncao(posicoes)
+      if (velha==False) :
+        print("VELHA!")
+        break
       vencedor = vencedorFuncao(posicoes)
 
       if (vencedor==True) :
@@ -128,15 +144,20 @@ if __name__ == '__main__':
       while (posicoes[posicao_do_usuario]!=" ") :
         print("Valor invalido")
         posicao_do_usuario = dadosFuncao()
-
       posicoes[posicao_do_usuario] = player_2
       tabuleiroFuncao(posicoes)
+      velha = velhaFuncao(posicoes)
+      if (velha==False) :
+        print("VELHA!")
+        break
       vencedor = vencedorFuncao(posicoes)
       if (vencedor==True) :
         print("Voce ganhou player 2 ")
         break
 
 
+
+#existe = elemento in lista
 
 
 
